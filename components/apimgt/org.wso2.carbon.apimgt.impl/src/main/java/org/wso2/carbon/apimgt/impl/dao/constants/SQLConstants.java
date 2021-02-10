@@ -2714,16 +2714,16 @@ public class SQLConstants {
             "INSERT INTO AM_POLICY_SUBSCRIPTION (NAME, DISPLAY_NAME, TENANT_ID, DESCRIPTION, QUOTA_TYPE, QUOTA, \n" +
                     " QUOTA_UNIT, UNIT_TIME, TIME_UNIT, IS_DEPLOYED, UUID, RATE_LIMIT_COUNT, \n" +
                     " RATE_LIMIT_TIME_UNIT,STOP_ON_QUOTA_REACH, MAX_DEPTH, MAX_COMPLEXITY, \n" +
-                    " BILLING_PLAN,MONETIZATION_PLAN,FIXED_RATE,BILLING_CYCLE,PRICE_PER_REQUEST,CURRENCY) \n" +
-                    " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                    " BILLING_PLAN,MONETIZATION_PLAN,FIXED_RATE,BILLING_CYCLE,PRICE_PER_REQUEST,CURRENCY, CONNECTIONS_COUNT) \n" +
+                    " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
     public static final String INSERT_SUBSCRIPTION_POLICY_WITH_CUSTOM_ATTRIB_SQL =
             "INSERT INTO AM_POLICY_SUBSCRIPTION (NAME, DISPLAY_NAME, TENANT_ID, DESCRIPTION, QUOTA_TYPE, QUOTA, \n" +
                     " QUOTA_UNIT, UNIT_TIME, TIME_UNIT, IS_DEPLOYED, UUID,  RATE_LIMIT_COUNT, \n" +
                     " RATE_LIMIT_TIME_UNIT, STOP_ON_QUOTA_REACH, MAX_DEPTH, MAX_COMPLEXITY, \n" +
                     " BILLING_PLAN, CUSTOM_ATTRIBUTES, MONETIZATION_PLAN, \n" +
-                    " FIXED_RATE, BILLING_CYCLE, PRICE_PER_REQUEST, CURRENCY) \n" +
-                    " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                    " FIXED_RATE, BILLING_CYCLE, PRICE_PER_REQUEST, CURRENCY, CONNECTIONS_COUNT) \n" +
+                    " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 
     public static final String INSERT_GLOBAL_POLICY_SQL =
@@ -2935,7 +2935,8 @@ public class SQLConstants {
                     "FIXED_RATE = ?," +
                     "BILLING_CYCLE = ?," +
                     "PRICE_PER_REQUEST = ?, " +
-                    "CURRENCY = ? " +
+                    "CURRENCY = ?, " +
+                    "CONNECTIONS_COUNT = ?" +
             "WHERE NAME = ? AND TENANT_ID = ?";
 
     public static final String UPDATE_SUBSCRIPTION_POLICY_WITH_CUSTOM_ATTRIBUTES_SQL =
@@ -2959,7 +2960,8 @@ public class SQLConstants {
                     "FIXED_RATE = ?," +
                     "BILLING_CYCLE = ?," +
                     "PRICE_PER_REQUEST = ?, " +
-                    "CURRENCY = ? " +
+                    "CURRENCY = ?, " +
+                    "CONNECTIONS_COUNT = ? " +
             "WHERE NAME = ? AND TENANT_ID = ?";
 
     public static final String UPDATE_SUBSCRIPTION_POLICY_BY_UUID_SQL =
@@ -2982,7 +2984,8 @@ public class SQLConstants {
                     "FIXED_RATE = ?," +
                     "BILLING_CYCLE = ?," +
                     "PRICE_PER_REQUEST = ?, " +
-                    "CURRENCY = ? " +
+                    "CURRENCY = ?, " +
+                    "CONNECTIONS_COUNT = ? " +
                     "WHERE UUID = ?";
 
     public static final String UPDATE_SUBSCRIPTION_POLICY_WITH_CUSTOM_ATTRIBUTES_BY_UUID_SQL =
@@ -3006,7 +3009,8 @@ public class SQLConstants {
                     "FIXED_RATE = ?," +
                     "BILLING_CYCLE = ?," +
                     "PRICE_PER_REQUEST = ?, " +
-                    "CURRENCY = ? " +
+                    "CURRENCY = ?, " +
+                    "CONNECTIONS_COUNT = ? " +
                     "WHERE UUID = ?";
 
     public static final String UPDATE_GLOBAL_POLICY_SQL =
